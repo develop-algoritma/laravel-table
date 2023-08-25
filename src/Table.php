@@ -124,7 +124,7 @@ class Table
         $fields = array_keys($model->toArray());
         // Remove the timestamp fields
         $fields = array_diff($fields, $timestamp_fields);
-        if ($model->isSortable) {
+        if (isset($model->isSortable)) {
             // Add the fields from the model's sortable array
             $fields = array_unique(array_merge($fields, $model->getSortable()));
         }
