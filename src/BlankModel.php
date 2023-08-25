@@ -31,4 +31,7 @@ class BlankModel implements Arrayable {
     {
         return $this->attributes;
     }
+    public function getSortable(){
+        return ;
+    }
 }
