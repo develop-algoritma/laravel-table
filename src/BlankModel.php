@@ -3,8 +3,9 @@
 namespace Gbrock\Table;
 
 use Illuminate\Contracts\Support\Arrayable;
-
+use Illuminate\Support\Arr;
 class BlankModel implements Arrayable {
+
     private $attributes;
 
     public function __construct($attributes)
@@ -14,7 +15,7 @@ class BlankModel implements Arrayable {
 
     public function __get($name)
     {
-        return array_get($this->attributes, $name, null);
+        return Arr::get($this->attributes, $name, null);
     }
 
     public function __call($name, $arguments = [])
@@ -31,7 +32,8 @@ class BlankModel implements Arrayable {
     {
         return $this->attributes;
     }
-    public function getSortable(){
-        return ;
+    public function getSortable()
+    {
+        return [];
     }
 }

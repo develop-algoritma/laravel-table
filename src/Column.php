@@ -82,7 +82,7 @@ class Column
             return $this;
         }
 
-        if ($model->is_sortable && in_array($this->getField(), $model->getSortable())) {
+        if (isset($model->is_sortable) && in_array($this->getField(), $model->getSortable())) {
             // The model dictates that this column should be sortable
             $this->setSortable(true);
         }
@@ -276,7 +276,7 @@ class Column
 
         return $this;
     }
-    
+
     public function setClasses($class)
     {
         $this->classes = explode(" ", $class);
